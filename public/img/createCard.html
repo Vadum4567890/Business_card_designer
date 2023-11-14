@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business card</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="templates">
+          <div class="template" onclick="selectTemplate('img/preview2.svg')">
+            <img src="img/preview2.svg" alt="Template 1"/>
+          </div>
+          <div class="template" onclick="selectTemplate('img/preview3.svg')">
+            <img src="img/preview3.svg">
+          </div>
+          <div class="template" onclick="selectTemplate('img/preview4.svg')">
+            <img src="img/preview4.svg" alt="Template 3">
+          </div>
+          <div class="template" onclick="selectTemplate('img/preview5.svg')">
+            <img src="img/preview5.svg" alt="Template 3">
+          </div>
+        </div>
+        <div class="area-container">
+          <div id="cardContainer">
+            <div class="card" id="card">
+                <img id="cardTemplate" src="img/preview5.svg" alt="Template 4"/>
+            </div>
+            <div id="customElements">
+              <img class="logo" id="logo" src="img/logo.svg" alt="Logo">
+              <img class="qr-code" id="qrCode" src="img/qr-code.svg" alt="QR Code">
+            </div>
+          </div>
+          <div class="button-container">
+            <button onclick="openDialog()" class="button">Выбрать</button>
+            <button onclick="createCustomCard()" class="createCardbtn">Создать свою визитку</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDialog()">&times;</span>
+          <form>
+            <label for="name" class="modal-label">Your <span>Name</span></label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+            <br>
+            <label for="position" class="modal-label">Position</label>
+            <input type="text" id="position" name="position" placeholder="Manager">
+            <br>
+            <label for="rounded" class="modal-label">Rounded card?</label>
+            
+            <div>
+                <input type="radio" id="rounded" name="rounded" value="true" class="rbtn"> Yes
+                <input type="radio" id="not-rounded" name="rounded" value="false" class="rbtn" checked> No
+            </div>
+            <br>
+            <button type="submit" onclick="saveCard()" class="savebtn">Сохранить</button>
+          </form>
+        </div>
+      </div>
+
+      <script src="js/script.js"></script>
+</body>
+</html>
